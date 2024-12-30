@@ -5,3 +5,8 @@
 School Portal Opener - v1.0.0
 <h1>Welcome To The home for the best School Portal opener!</h1>
 <p style="font-size:7;">Version 1.0b</p>
+
+<P>This is the official github for School Portal Launcher. Here you will find the source code for the extension. 
+As new updates roll out, this github will be updated. </P>
+
+<p>Current github version: 1.0 -- Current extension version: 1.0</p>
