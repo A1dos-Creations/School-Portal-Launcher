@@ -10,3 +10,6 @@ School Portal Opener - v1.0.0
 As new updates roll out, this github will be updated. </P>
 
 <p>Current github version: 1.0 -- Current extension version: 1.0</p>
+
+<p style="color:green">Chrome Webstore Status:</p>
+<p>IN REVIEW</p>
