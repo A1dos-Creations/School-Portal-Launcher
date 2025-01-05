@@ -1,7 +1,7 @@
 <html style="background-color: rgba(175, 175, 175, 0);border-radius: 15px;">
     <table style="margin:1;Width: 300px;Height:200px;border-radius: 45px;"></table>
-    <button id="themeToggle" class="theme themeB">
-        <img id="themeToggleImg" src="./images/dark.png" style="width: 20px;height: 20px;-webkit-transition-duration: 0.4s;transition-duration: 0.4s;"> <!-- Default Image, dark mode button -->
+    <button id="themeToggle" class="theme">
+        <img id="themeToggleImg" src="./images/dark.png" class="themeHover" style="-webkit-transition-duration: 0.4s;transition-duration: 0.4s;"> <!-- Default Image, dark mode button -->
     </button>
     <head style="border-radius: 15px;">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,9 @@
 
             .buttonL:hover {
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                width: 320px;
+                height: 55;
+                font-size: 19px;
             }
 
             .buttonD {
@@ -66,6 +69,9 @@
             }
             .buttonD:hover {
                 box-shadow: 0 12px 16px 0 rgba(141,141,141,0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
+                width: 320px;
+                height: 55;
+                font-size: 19px;
             }
             
             /* THEME STYLING */
@@ -85,9 +91,19 @@
                 transition-duration: 0.4s;
                 box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2), 0 4px 18px 0 rgba(0,0,0,0.19);
             }
-
-            .themeB:hover {
+            .theme:hover {
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+
+            .themeHover:hover {
+              width: 23px;
+              height: auto;
+            }
+            .themeHover {
+              width: 20px;
+              height: auto;
+              -webkit-transition-duration: 0.4s; /* Chrome */
+              transition-duration: 0.4s;
             }
 
             /* THEMES */
@@ -171,7 +187,7 @@
         <body id="mainBody" class="lightMode">
             <h1 id="Heading" class="mainHeaderL">Hello!</h1>
 
-            <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: center;color: rgb(174, 100, 224);text-wrap:pretty;font: size 10px;;font-weight: bold;">Open your school portals with ease here!</p>
+            <p style="text-shadow: 10px rgba(174, 100, 224, 0.638);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: center;color: rgb(174, 100, 224);text-wrap:pretty;font: size 10px;;font-weight: bold;">Open your school portals with ease here!</p>
 
             <div id="wrapper">
                 <a type="button" href="https://aeries.net/student/LoginParent.aspx?page=Dashboard.aspx" target="_blank">
@@ -182,9 +198,12 @@
 
                 <a type="button" href="https://clever.com/oauth/district-picker?client_id=e2c8af7171e22a82d592&redirect_uri=https%3A%2F%2Fsamlidp.clever.com%2Fchromebook-login%2Foauth&response_type=code&skip=0" target="_blank">
                     <button id="button2" class="buttonL">
-                        <b>Open Clever Portal</b>
+                        <b style="text-align: center;margin-bottom: 10px;">Open Clever Portal</b>
                     </button>
                 </a>
+                <!--<button style="background-color: #bdbdbd00;border-color: #bdbdbd00;margin-left: 246px;margin-top: -56px;">
+                    <img id="b2fav" src="./images/DefaultFavorite.png" style="height: 25px;width: auto;">
+                </button> -->
 
                 <a type="button" href="https://classroom.google.com/" target="_blank">
                     <button id="button3" class="buttonL">
@@ -200,7 +219,7 @@
                 </button>
         </body>
 
-        <button class="toggle" id="togglebodyButton" style="background-image:linear-gradient(50deg, rgb(100, 232, 255), rgb(39, 161, 218)) ;font: 300;font-family: Verdana, Geneva, Tahoma, sans-serif;color: black;border-style: none;border-radius: 12px;">Add Custom Website</button>
+        <button class="toggle customContentL" id="togglebodyButton">Add Custom Website</button>
         
     <head id="customBttnHead" style="display: none;" http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; unsafe-inline">
         <meta charset="UTF-8">
@@ -213,25 +232,57 @@
             padding: 20px;
           }
 
+          .favButton {
+            background-color: #bdbdbd00;
+            border-style: none;
+          }
+
+          .deleteButton {
+            background-color: #bdbdbd00;
+            border-style: none;
+          }
+
           .hidden {
             display: block;
           }
           /* ^^ Sets visibility before. */
+
+          .customContentL {
+            background-image: linear-gradient(50deg, rgb(100, 232, 255), rgb(39, 161, 218));
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(0, 0, 0);
+            border-style: none;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px 0 rgba(36, 128, 194, 0.62),0 7px 5px 0 rgba(36, 130, 197, 0.31);
+            -webkit-transition-duration: 0.4s; /* Chrome */
+            transition-duration: 0.4s;
+          }
+          .customContentL:hover {
+            box-shadow: 0 12px 16px 0 rgba(36, 128, 194, 0.62),0 17px 50px rgba(36, 130, 197, 0.31);
+          }
+
+          .customContentD {
+            background-image: linear-gradient(50deg, rgb(102, 41, 186), rgb(171, 8, 186));
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(255, 255, 255);
+            border-style: none;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px 0 rgba(80, 19, 166, 0.62),0 7px 5px 0 rgba(206, 4, 237, 0.31);
+            -webkit-transition-duration: 0.4s; /* Chrome */
+            transition-duration: 0.4s;
+          }
+          .customContentD:hover {
+            box-shadow: 0 12px 16px 0 rgba(80, 19, 166, 0.62),0 17px 50px rgba(206, 4, 237, 0.31);
+          }
 
           input, button {
             margin: 10px 0;
             padding: 10px;
             font-size: 16px;
           }
-
-          .toggle {
-            box-shadow: 0 2px 6px 0 rgba(70, 112, 142, 0.24),0 7px 5px 0 rgba(70, 112, 142, 0.19);
-            -webkit-transition-duration: 0.4s; /* Chrome */
-            transition-duration: 0.4s;
-          }
-          .toggle:hover {
-            box-shadow: 0 12px 16px 0 rgba(70, 112, 142, 0.24),0 17px 50px 0 rgba(70, 112, 142, 0.19);
-          }
+          /* 12px 16px 0 ... 0 17px 50px */
 
           .cstmContent {
             display: none;
@@ -280,7 +331,6 @@
             border-color: black;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 13px;
-            cursor: pointer;
             -webkit-transition-duration: 0.4s; /* Chrome */
             transition-duration: 0.4s;
             box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2), 0 4px 18px 0 rgba(0,0,0,0.19);
@@ -296,13 +346,29 @@
             border-color: rgb(221, 221, 221);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 13px;
-            cursor: pointer;
             -webkit-transition-duration: 0.4s; /* Chrome */
             transition-duration: 0.4s;
             box-shadow: 0 2px 6px 0 rgba(196, 196, 196, 0.2), 0 4px 18px 0 rgba(196, 196, 196,0.19);
           }
           .BTDark:hover {
             box-shadow: 0 12px 16px 0 rgba(196, 196, 196,0.24),0 17px 50px 0 rgba(196, 196, 196,0.19);
+          }
+
+          .CD {
+            font-size: 13.5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            color: #d302ba !important;
+            -webkit-transition-duration: 0.4s; /* Chrome */
+            transition-duration: 0.4s;
+          }
+          .CL {
+            font-size: 13.5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            color: #0a5aae !important;
+            -webkit-transition-duration: 0.4s; /* Chrome */
+            transition-duration: 0.4s;
           }
         </style>
 
@@ -323,9 +389,7 @@
                 <script src="button.js"></script>
             </div>
         </body>
-
+      <br>
     </head>
-
-    <p style="font-size: 10px;color: #0183bf8d;">Made by Devin S.</p>
       
 </html>
