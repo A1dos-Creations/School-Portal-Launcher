@@ -9,7 +9,7 @@ School Portal Opener - v1.0.0
 <P>This is the official github for School Portal Launcher. Here you will find the source code for the extension. 
 As new updates roll out, this github will be updated. </P>
 
-<p>Current github version: 1.0 -- Current extension version: 1.0</p>
+<p>Current github version: 1.1.2 -- Current extension version: 1.1.2</p>
 
 <p style="color:green">Chrome Webstore Status:</p>
-<p>IN REVIEW</p>
+<p>PUBLIC</p>
