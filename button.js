@@ -1,3 +1,6 @@
+// Favorite Button - Un-favorite Button \\
+// COMING SOON \\
+
 // Custom button scripts: \\
 
 // Get references to elements
@@ -67,7 +70,7 @@ function createClonedButton(text, url, id) {
   // Create a delete button
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "";
-  deleteButton.classList.add("delete-button");
+  deleteButton.classList.add("deleteButton");
   deleteButton.style.marginLeft = "10px";
   // Add it's image:
   const deleteIcon = document.createElement("img");
@@ -78,6 +81,20 @@ function createClonedButton(text, url, id) {
   deleteIcon.style.pointerEvents = "none";
   // Apend the image to the delete button
   deleteButton.appendChild(deleteIcon);
+
+  const favButton = document.createElement("img");
+  favButton.textContent = "";
+  favButton.classList.add("favButton");
+  favButton.style.marginLeft = "-10px";
+
+  const favIcon = document.createElement("button");
+  favIcon.src = "./images/DefaultFavorite.png";
+  favIcon.alt = "Add this button to your favorites list";
+  favIcon.style.height = "12px";
+  favIcon.style.width = "12px";
+  favButton.style.pointerEvents = "none";
+  favIcon.appendChild(favButton)
+
 
   // Append the anchor and delete button to the container
   container.appendChild(anchor);
@@ -164,6 +181,9 @@ function applySavedTheme(theme) {
     updateButton.classList.add("BDark", "BTDark");
     updateButton.classList.remove("BLight", "BTLight");
 
+    openButton.classList.add("customContentD");
+    openButton.classList.remove("customContentL");
+
     themeToggleImg.src = "./images/light.png";
   } else {
     background.classList.add("lightMode");
@@ -188,15 +208,18 @@ function applySavedTheme(theme) {
     button2.classList.remove("buttonD");
     button3.classList.remove("buttonD");
 
-    header.classList.add("mainHeaderL")
-    header.classList.remove("mainHeaderD")
+    header.classList.add("mainHeaderL");
+    header.classList.remove("mainHeaderD");
+
+    openButton.classList.add("customContentL");
+    openButton.classList.remove("customContentD");
 
     updateButton.classList.add("BLight", "BTLight");
     updateButton.classList.remove("BDark", "BTDark");
+
     themeToggleImg.src = "./images/dark.png";
   }
-}
-
+};
 // Load the saved theme on extension load
 document.addEventListener("DOMContentLoaded", () => {
   chrome.storage.local.get("theme", (data) => {
